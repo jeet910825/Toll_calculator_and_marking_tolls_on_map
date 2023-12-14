@@ -1,0 +1,13 @@
+.toll-pop{
+    display: flex;
+    flex-direction: column;
+   
+}
+.tagDetails{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+.tagDetails > h4{
+    white-space: nowrap;
+}

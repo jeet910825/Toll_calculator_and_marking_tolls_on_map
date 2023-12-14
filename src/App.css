@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    margin: 10px;
+    color: white;
+    text-align: center;
+    text-shadow: 1px 1px black;
+}
+body{
+background-color: lightblue;
+}
+.container{
+    display: flex;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: white;
+    gap: 10px;
+}
+@media screen and (max-width:560px) {
+    .container{
+        flex-direction: column;
+    }
+}

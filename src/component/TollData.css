@@ -1,0 +1,12 @@
+.table-container{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 10px;
+    background-color: white;
+}
+.table-head , .table-data{
+    display: flex;
+    gap: 10px;
+    justify-content: space-around;
+}

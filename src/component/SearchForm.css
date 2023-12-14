@@ -1,0 +1,30 @@
+.searchContainer{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+}
+.inputs > input {
+    height: 30px;
+    
+}
+
+.inputs > label{
+    font-size: 1.15rem;
+}
+.searchButton{
+    margin-top: 10px;
+    padding: 5px;
+    width: max-content;
+    background-color:#96EFFF  ;
+    border: 0.1px solid black;
+    border-radius: 3px;
+}
+.options{
+    height: 25px;
+    width: max-content;
+    margin-top: 10px;
+}

@@ -1,0 +1,9 @@
+.leaflet-container{
+    height: 70vh;
+}
+.leaflet-routing-container{
+    display: none;
+}
+.map-container{
+    flex:7;
+}
