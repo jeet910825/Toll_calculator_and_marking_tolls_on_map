@@ -11,7 +11,7 @@ import { useDispatch } from "react-redux";
 
 export default function Test() {
   const vehicleType = useSelector(state=>state.locations.vehicleType)
-  console.log(vehicleType)
+  
   const dispatch = useDispatch();
   const [encoding, setEncoding] = useState("");
 
@@ -22,6 +22,11 @@ export default function Test() {
           const response = await axios.post(import.meta.env.VITE_URL, {
             polyline: encoding,
             vehicleType:vehicleType
+          },{
+            headers: {
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': '*',
+            }
           });
           dispatch(setData(response.data.data));
         } catch (error) {
@@ -30,7 +35,7 @@ export default function Test() {
       };
       fetchData();
     }
-  }, [encoding]);
+  }, [encoding,vehicleType]);
 
   const map = useMap();
   const locations = useSelector((state) => state.locations);
@@ -42,11 +47,7 @@ export default function Test() {
   useEffect(() => {
     if (!map) return;
 
-    map.eachLayer((layer) => {
-      if (layer instanceof L.Marker || layer instanceof L.Polyline) {
-        map.removeLayer(layer);
-      }
-    });
+    
 
     const routingControl = L.Routing.control({
       waypoints: [

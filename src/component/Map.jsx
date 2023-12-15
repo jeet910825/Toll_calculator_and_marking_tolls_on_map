@@ -14,7 +14,7 @@ function Map() {
     <div className="map-container">
       <MapContainer center={position} zoom={4}>
         <TileLayer
-          url="http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}"
+          url="http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           subdomains={["mt0", "mt1", "mt2", "mt3"]}
         />

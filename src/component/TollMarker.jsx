@@ -12,9 +12,7 @@ function TollMarker() {
     iconUrl: tollImage,
     iconSize: [25, 25],
   });
-  useEffect(()=>{
-
-  },[toll])
+ 
   return (
     <>
       {toll.length>0
