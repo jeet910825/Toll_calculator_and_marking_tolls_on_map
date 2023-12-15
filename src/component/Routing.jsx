@@ -14,7 +14,12 @@ export default function Test() {
   
   const dispatch = useDispatch();
   const [encoding, setEncoding] = useState("");
-
+  const customMarkerIcon = L.icon({
+    iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
+    iconSize: [25, 41], // size of the icon
+    iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+    popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
+  });
   useEffect(() => {
     if (encoding.length > 0) {
       const fetchData = async () => {
@@ -86,7 +91,7 @@ export default function Test() {
       destinationMarkerRef.current = L.marker([
         locations.destinationLocation.lat,
         locations.destinationLocation.lon,
-      ])
+      ],{icon:customMarkerIcon})
         .bindPopup(
           `Destination Address: ${locations.destinationLocation.address}`
         )
@@ -95,7 +100,7 @@ export default function Test() {
       sourceMarkerRef.current = L.marker([
         locations.sourceLocation.lat,
         locations.sourceLocation.lon,
-      ])
+      ],{icon:customMarkerIcon})
         .bindPopup(`Source Address: ${locations.sourceLocation.address}`)
         .addTo(map)
 
