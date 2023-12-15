@@ -30,7 +30,10 @@ export default function Test() {
           });
           dispatch(setData(response.data.data));
         } catch (error) {
-          console.log("error");
+
+          if(error.response.status===404){
+            alert("reached maximum api request try it tommarrow")
+          }
         }
       };
       fetchData();

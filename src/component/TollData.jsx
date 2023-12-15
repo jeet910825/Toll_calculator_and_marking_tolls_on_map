@@ -6,7 +6,7 @@ function TollData() {
   const tollData = useSelector((state) => state.tollData.data.route);
   
   return (
-    <div>
+    <>
       {tollData?.hasTolls ? (
         <div className="table-container">
           <div className="table-head">
@@ -23,7 +23,7 @@ function TollData() {
       ) : (
         ""
       )}
-    </div>
+    </>
   );
 }
 

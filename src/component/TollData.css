@@ -10,3 +10,10 @@
     gap: 10px;
     justify-content: space-around;
 }
+
+@media screen and (max-width:560px) {
+    .table-container{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

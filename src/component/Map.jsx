@@ -1,11 +1,9 @@
 import React from "react";
-import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
-import { useSelector } from "react-redux";
-import "leaflet/dist/leaflet.css";
+import { MapContainer, TileLayer } from "react-leaflet";
 import "./Map.css";
 import Routing from "./Routing";
 import TollMarker from "./TollMarker";
-import Test from "./Test";
+
 
 function Map() {
 
