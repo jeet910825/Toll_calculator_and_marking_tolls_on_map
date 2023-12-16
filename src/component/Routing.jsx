@@ -8,6 +8,7 @@ import { decode, encode } from "@googlemaps/polyline-codec";
 import axios from "axios";
 import { setData } from "../features/tollDataSlice";
 import { useDispatch } from "react-redux";
+import redMarker from '../assets/location marker/redmarker.png'
 
 export default function Test() {
   const vehicleType = useSelector(state=>state.locations.vehicleType)
@@ -17,6 +18,12 @@ export default function Test() {
   const customMarkerIcon = L.icon({
     iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
     iconSize: [25, 41], // size of the icon
+    iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+    popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
+  });
+  const customMarkerIcon2 = L.icon({
+    iconUrl: redMarker,
+    iconSize: [35, 41], // size of the icon
     iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
     popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
   });
@@ -91,7 +98,7 @@ export default function Test() {
       destinationMarkerRef.current = L.marker([
         locations.destinationLocation.lat,
         locations.destinationLocation.lon,
-      ],{icon:customMarkerIcon})
+      ],{icon:customMarkerIcon2})
         .bindPopup(
           `Destination Address: ${locations.destinationLocation.address}`
         )
